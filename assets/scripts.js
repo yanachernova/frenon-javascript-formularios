@@ -17,12 +17,12 @@ const addUser = (e) => {
   
 }
 
-const toJoin = (user, index) =>{
+const toJoin = (user, i) =>{
   const list = document.getElementById("list");
   const item = document.createElement("li");
-  item.innerHTML = `<a href="#" onclick="deleteUser(event,${index})">
+  item.innerHTML = `<a href="#" onclick="deleteUser(event,${i})">
   <ion-icon name="trash-outline"></ion-icon>
-  ${user.name} - ${user.email}
+  ${user.name}(${user.email})
 </a>`;
   list.appendChild(item);
 }
@@ -53,8 +53,8 @@ const updateUsers = (users) => {
   const ul = document.getElementById("list");
   ul.innerHTML = "";
   if (users) {
-    users.forEach((user, item) => {
-      toJoin(user, item);
+    users.forEach((user, i) => {
+      toJoin(user, i);
     });
   } else {
     if (ALL_USERS.length) {
