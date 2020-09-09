@@ -1,4 +1,4 @@
-const USERS = "users";
+const USERS = "";
 const ALL_USERS = getUsers();
 
 const addUser = (e) => {
